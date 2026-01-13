@@ -73,15 +73,15 @@ const Header: React.FC = () => {
             </a>
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center z-50">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className={`${scrolled ? 'text-black' : 'text-white'} p-2`}
+              className={`${scrolled ? 'text-black bg-white/90' : 'text-white bg-white/10'} p-3 rounded-lg backdrop-blur-sm border-2 ${scrolled ? 'border-black/10' : 'border-white/20'} transition-all hover:scale-110`}
               aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
-              <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars-staggered'} text-xl`}></i>
+              <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
             </button>
           </div>
         </div>
@@ -90,21 +90,36 @@ const Header: React.FC = () => {
       {isOpen && (
         <div 
           id="mobile-menu"
-          className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-8 flex flex-col gap-6 shadow-xl"
+          className="md:hidden fixed top-0 left-0 w-full h-screen bg-white z-[100] pt-20 px-6 flex flex-col gap-4 shadow-2xl overflow-y-auto"
           role="menu"
           aria-label="Menú de navegación móvil"
         >
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 text-black bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
+            aria-label="Cerrar menú"
+          >
+            <i className="fas fa-times text-xl"></i>
+          </button>
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={`#${link.id}`}
               onClick={(e) => handleScrollTo(e, link.id)} 
-              className="text-lg font-bold text-black uppercase tracking-widest hover:text-bamba-yellow transition-colors"
+              className="text-2xl font-black text-black uppercase tracking-wider hover:text-bamba-yellow transition-colors py-4 border-b border-gray-200"
               role="menuitem"
             >
               {link.name}
             </a>
           ))}
+          <a 
+            href="#contacto" 
+            onClick={(e) => handleScrollTo(e, 'contacto')}
+            className="mt-4 bg-bamba-blue text-white px-8 py-4 rounded-full text-xl font-black uppercase tracking-wider text-center hover:bg-black transition-colors"
+            role="menuitem"
+          >
+            Contacto
+          </a>
         </div>
       )}
     </nav>

@@ -43,16 +43,16 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="mb-24">
-        <span className="text-bamba-blue font-black tracking-[0.3em] text-xs uppercase mb-4 block">EL EQUIPO</span>
-        <h2 className="text-5xl md:text-7xl font-black-bamba text-black leading-none uppercase italic tracking-tighter">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="mb-12 sm:mb-16 md:mb-24">
+        <span className="text-bamba-blue font-black tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs uppercase mb-3 sm:mb-4 block">EL EQUIPO</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black-bamba text-black leading-none uppercase italic tracking-tighter">
           NUESTROS <span className="text-bamba-blue">PROTAGONISTAS</span>
         </h2>
       </div>
 
       {/* Team Grid - Todos al mismo nivel */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
         {teamMembers.map((person, i) => (
           <div key={i} className="group cursor-pointer">
             <a href={person.instagram} target="_blank" rel="noopener noreferrer" className="block">
@@ -76,8 +76,8 @@ const Team: React.FC = () => {
               </div>
             </a>
             <div className="text-center">
-              <h4 className="text-lg font-black-bamba text-black mb-1 uppercase tracking-tighter">{person.name}</h4>
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+              <h4 className="text-base sm:text-lg font-black-bamba text-black mb-1 uppercase tracking-tighter">{person.name}</h4>
+              <p className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                 {person.role}
               </p>
             </div>

@@ -32,32 +32,32 @@ const App: React.FC = () => {
         </div>
 
         {/* Sobre Nosotros - White background with yellow accents */}
-        <section id="sobre-nosotros" className="py-32 bg-white" aria-labelledby="sobre-nosotros-heading">
+        <section id="sobre-nosotros" className="py-12 sm:py-20 md:py-32 bg-white" aria-labelledby="sobre-nosotros-heading">
           <About />
         </section>
 
         {/* Sponsors Section - New */}
-        <section id="sponsors" className="py-24 bg-gray-50 border-y border-black/5" aria-labelledby="sponsors-heading">
+        <section id="sponsors" className="py-12 sm:py-16 md:py-24 bg-gray-50 border-y border-black/5" aria-labelledby="sponsors-heading">
           <Sponsors />
         </section>
 
         {/* Impacto - Vibrant Yellow Section */}
-        <section id="impacto" className="py-32 bg-bamba-yellow border-y-4 border-black" aria-labelledby="impacto-heading">
+        <section id="impacto" className="py-12 sm:py-20 md:py-32 bg-bamba-yellow border-y-3 sm:border-y-4 border-black" aria-labelledby="impacto-heading">
           <Stats />
         </section>
 
         {/* Equipo - Off White / Light Gray with Blue Accents */}
-        <section id="equipo" className="py-32 bg-[#f8f9fa]" aria-labelledby="equipo-heading">
+        <section id="equipo" className="py-12 sm:py-20 md:py-32 bg-[#f8f9fa]" aria-labelledby="equipo-heading">
           <Team />
         </section>
 
         {/* La Tribuna - Solid Deep Blue */}
-        <section id="tribuna" className="bg-bamba-blue py-32 text-white border-y-4 border-black" aria-labelledby="tribuna-heading">
+        <section id="tribuna" className="bg-bamba-blue py-12 sm:py-20 md:py-32 text-white border-y-3 sm:border-y-4 border-black" aria-labelledby="tribuna-heading">
           <CTASection />
         </section>
 
         {/* Contacto - High Energy Yellow */}
-        <section id="contacto" className="py-32 bg-white" aria-labelledby="contacto-heading">
+        <section id="contacto" className="py-12 sm:py-20 md:py-32 bg-white" aria-labelledby="contacto-heading">
           <ContactForm />
         </section>
       </main>

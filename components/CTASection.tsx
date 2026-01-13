@@ -3,21 +3,21 @@ import React from 'react';
 
 const CTASection: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20 overflow-hidden">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 overflow-hidden">
+      <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
         <div className="reveal">
-          <h2 className="text-7xl md:text-9xl font-black-bamba mb-8 leading-[0.75] uppercase italic tracking-tighter">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black-bamba mb-6 sm:mb-8 leading-[0.75] uppercase italic tracking-tighter">
             VENÍ A LA<br/>
             <span className="text-bamba-yellow">TRIBUNA</span>
           </h2>
-          <p className="text-2xl font-bold mb-12 text-white/70 max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-8 sm:mb-12 text-white/70 max-w-xl">
             Viví Bamba desde adentro. Sé parte del set, participá en vivo y conocé a todo el equipo. 
           </p>
           <a 
             href="https://tally.so/r/wAVkGD" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="brutal-shadow inline-block bg-bamba-yellow text-black px-16 py-6 font-black uppercase tracking-tighter text-2xl border-2 border-black hover:bg-white transition-all focus:outline-none focus:ring-2 focus:ring-white rounded-lg"
+            className="brutal-shadow inline-block bg-bamba-yellow text-black px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 font-black uppercase tracking-tighter text-base sm:text-lg md:text-xl lg:text-2xl border-2 border-black hover:bg-white transition-all focus:outline-none focus:ring-2 focus:ring-white rounded-lg w-full sm:w-auto text-center"
             aria-label="Reservar lugar en La Tribuna de Bamba Streaming"
           >
             RESERVAR LUGAR

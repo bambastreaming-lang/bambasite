@@ -128,10 +128,10 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6">
-      <div className="mb-20 text-center">
-        <span className="text-bamba-blue font-black tracking-[0.3em] text-xs uppercase mb-4 block">HABLEMOS</span>
-        <h2 className="text-5xl md:text-7xl font-black-bamba text-black uppercase italic tracking-tighter">CONTACTO</h2>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+        <span className="text-bamba-blue font-black tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs uppercase mb-3 sm:mb-4 block">HABLEMOS</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black-bamba text-black uppercase italic tracking-tighter">CONTACTO</h2>
       </div>
 
       <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
