@@ -76,43 +76,33 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // ⚠️ IMPORTANTE: Para que los emails lleguen automáticamente, configura Formspree:
-      // 1. Ve a https://formspree.io y crea una cuenta gratuita (50 envíos/mes gratis)
-      // 2. Crea un nuevo formulario y copia el ID (ej: xjvqkzpn)
-      // 3. Reemplaza 'YOUR_FORMSPREE_ID' abajo con tu ID real
-      // 4. El email llegará automáticamente a bambastreaming@gmail.com
-      
-      const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ⬅️ REEMPLAZA CON TU ID DE FORMSPREE
-      
-      if (FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
-        // ✅ Formspree configurado - Envía email automáticamente
-        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            message: formData.message,
-            _subject: `Nuevo contacto desde Bamba Streaming - ${formData.name}`,
-            _replyto: formData.email
-          })
-        });
+      // 📧 FormSubmit - Envía emails automáticamente sin configuración
+      // Solo necesitas el email de destino: bambastreaming@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/bambastreaming@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _subject: `Nuevo contacto desde Bamba Streaming - ${formData.name}`,
+          _captcha: false, // Desactivar captcha (opcional, puedes activarlo después)
+          _template: 'table' // Formato de tabla para mejor legibilidad
+        })
+      });
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || 'Error al enviar el formulario');
-        }
-      } else {
-        // ⚠️ Mailto (Fallback temporal - Abre el cliente de email del usuario)
-        // Esto NO envía el email automáticamente, solo abre el cliente de email
-        const mailtoLink = `mailto:bambastreaming@gmail.com?subject=Contacto desde la web - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
-          `Nombre: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\n\nMensaje:\n${formData.message}`
-        )}`;
-        window.location.href = mailtoLink;
+      if (!response.ok) {
+        throw new Error('Error al enviar el formulario');
+      }
+
+      const result = await response.json();
+      
+      if (!result.success) {
+        throw new Error(result.message || 'Error al enviar el formulario');
       }
 
       setSubmitted(true);
