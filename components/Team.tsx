@@ -13,28 +13,28 @@ const Team: React.FC = () => {
       instagram: "https://www.instagram.com/julibarki/"
     },
     { 
-      name: "SEBASTIÁN", 
+      name: "SEBI GRAJEWER", 
       role: "CO-CONDUCTOR", 
       // Coloca la foto en: public/images/team/sebastian.jpg
       img: "/images/team/sebastian.jpg",
       instagram: "https://www.instagram.com/grajess/" 
     },
     { 
-      name: "ZALMI", 
+      name: "ZALMI LEVY", 
       role: "CO-CONDUCTOR", 
       // Coloca la foto en: public/images/team/zalmi.jpg
       img: "/images/team/zalmi.jpg",
       instagram: "https://www.instagram.com/rabinorunner/"
     },
     { 
-      name: "SHLOMO", 
+      name: "SHLOMO LEVY", 
       role: "CO-CONDUCTOR", 
       // Coloca la foto en: public/images/team/shlomo.jpg
       img: "/images/team/shlomo.jpg",
       instagram: "https://www.instagram.com/shlomolevy770/"
     },
     { 
-      name: "PRISCILA", 
+      name: "PRI CHAB", 
       role: "CO-CONDUCTORA", 
       // Coloca la foto en: public/images/team/priscila.jpg
       img: "/images/team/priscila.jpg",

@@ -76,15 +76,16 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // OPCIÓN 1: Formspree (Recomendado - Gratis hasta 50 envíos/mes)
-      // 1. Ve a https://formspree.io y crea una cuenta gratuita
+      // ⚠️ IMPORTANTE: Para que los emails lleguen automáticamente, configura Formspree:
+      // 1. Ve a https://formspree.io y crea una cuenta gratuita (50 envíos/mes gratis)
       // 2. Crea un nuevo formulario y copia el ID (ej: xjvqkzpn)
-      // 3. Reemplaza 'YOUR_FORMSPREE_ID' abajo con tu ID
-      // 4. Descomenta el código de Formspree y comenta el mailto
+      // 3. Reemplaza 'YOUR_FORMSPREE_ID' abajo con tu ID real
+      // 4. El email llegará automáticamente a bambastreaming@gmail.com
       
-      const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ⬅️ Reemplaza con tu ID de Formspree
+      const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ⬅️ REEMPLAZA CON TU ID DE FORMSPREE
       
       if (FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
+        // ✅ Formspree configurado - Envía email automáticamente
         const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
           method: 'POST',
           headers: { 
@@ -96,7 +97,8 @@ const ContactForm: React.FC = () => {
             email: formData.email,
             phone: formData.phone,
             message: formData.message,
-            _subject: `Nuevo contacto desde Bamba Streaming - ${formData.name}`
+            _subject: `Nuevo contacto desde Bamba Streaming - ${formData.name}`,
+            _replyto: formData.email
           })
         });
 
@@ -105,8 +107,8 @@ const ContactForm: React.FC = () => {
           throw new Error(errorData.error || 'Error al enviar el formulario');
         }
       } else {
-        // OPCIÓN 2: Mailto (Fallback - Abre el cliente de email)
-        // Funciona sin configuración pero requiere que el usuario tenga configurado un cliente de email
+        // ⚠️ Mailto (Fallback temporal - Abre el cliente de email del usuario)
+        // Esto NO envía el email automáticamente, solo abre el cliente de email
         const mailtoLink = `mailto:bambastreaming@gmail.com?subject=Contacto desde la web - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
           `Nombre: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\n\nMensaje:\n${formData.message}`
         )}`;
