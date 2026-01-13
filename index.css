@@ -1,0 +1,175 @@
+/* Bamba Streaming - Main Styles */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F9F9F9;
+  margin: 0;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-black-bamba {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+/* Color Variables */
+:root {
+  --bamba-yellow: #E6AC3C;
+  --bamba-blue: #2D5096;
+  --bamba-off-white: #F9F9F9;
+}
+
+.bg-bamba-yellow {
+  background-color: var(--bamba-yellow);
+}
+
+.bg-bamba-blue {
+  background-color: var(--bamba-blue);
+}
+
+.text-bamba-yellow {
+  color: var(--bamba-yellow);
+}
+
+.text-bamba-blue {
+  color: var(--bamba-blue);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--bamba-yellow);
+  color: #000;
+}
+
+::-moz-selection {
+  background-color: var(--bamba-yellow);
+  color: #000;
+}
+
+/* Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fallback: Show content after a delay if JS fails */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: fadeInFallback 0.1s ease-in 1s forwards;
+  }
+}
+
+@keyframes fadeInFallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brutal Shadow Effect */
+.brutal-shadow {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  transition: all 0.2s ease;
+}
+
+.brutal-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 12px 12px 0px 0px var(--bamba-yellow);
+}
+
+.brutal-shadow:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bamba-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bamba-yellow);
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 3px solid var(--bamba-yellow);
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth Transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
