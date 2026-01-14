@@ -5,8 +5,8 @@ const Stats: React.FC = () => {
   const metrics = [
     { num: "900", label: "Youtube Subs", icon: "fa-play" },
     { num: "4.4K", label: "Instagram", icon: "fa-camera" },
-    { num: "185K", label: "Total Views", icon: "fa-eye" },
-    { num: "52K", label: "Engagement", icon: "fa-heart" }
+    { num: "1.5M", label: "Total Views", icon: "fa-eye" },
+    { num: "80K", label: "Engagement", icon: "fa-heart" }
   ];
 
   return (
