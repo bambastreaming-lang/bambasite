@@ -38,12 +38,12 @@ const App: React.FC = () => {
         </section>
 
         {/* Cómo Ver Bamba - Instructions */}
-        <section id="como-ver" className="py-12 sm:py-20 md:py-32 bg-white border-y-2 border-black/10" aria-labelledby="como-ver-heading">
+        <section id="como-ver" className="py-12 sm:py-20 md:py-32 bg-[#f8f9fa] border-y-2 border-black/10" aria-labelledby="como-ver-heading">
           <HowToWatch />
         </section>
 
         {/* Sponsors Section - New */}
-        <section id="sponsors" className="py-12 sm:py-16 md:py-24 bg-gray-50 border-y border-black/5" aria-labelledby="sponsors-heading">
+        <section id="sponsors" className="py-12 sm:py-16 md:py-24 bg-white border-y border-black/5" aria-labelledby="sponsors-heading">
           <Sponsors />
         </section>
 
