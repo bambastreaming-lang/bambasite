@@ -61,7 +61,7 @@ const Sponsors: React.FC = () => {
     },
     { 
       name: "Orlibbi", 
-      logo: "/images/sponsors/orlibbi.png", 
+      logo: "/images/sponsors/orlibi.png", 
       placeholder: "fas fa-star",
       url: "https://orlibbi.com.ar/"
     }
