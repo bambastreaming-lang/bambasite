@@ -80,30 +80,6 @@ const HowToWatch: React.FC = () => {
         </a>
       </div>
 
-      {/* Visual Guide - Campanita */}
-      <div className="mt-16 sm:mt-20 md:mt-24 bg-bamba-yellow border-4 border-black p-8 sm:p-10 md:p-12 text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-6xl sm:text-7xl md:text-8xl mb-6 sm:mb-8">🔔</div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black-bamba text-black mb-4 sm:mb-6 uppercase italic tracking-tighter">
-            ¡NO OLVIDES ACTIVAR LA CAMPANITA!
-          </h3>
-          <p className="text-base sm:text-lg md:text-xl text-black font-bold mb-6 sm:mb-8">
-            Así recibirás una notificación cada vez que subamos un nuevo episodio. 
-            No te pierdas ningún contenido de Bamba Streaming.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base font-black text-black">
-            <div className="bg-white border-2 border-black px-4 sm:px-6 py-2 sm:py-3">
-              📺 EN VIVO
-            </div>
-            <div className="bg-white border-2 border-black px-4 sm:px-6 py-2 sm:py-3">
-              ⏰ MARTES 20:30 HS
-            </div>
-            <div className="bg-white border-2 border-black px-4 sm:px-6 py-2 sm:py-3">
-              🇦🇷 HORA ARGENTINA
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
