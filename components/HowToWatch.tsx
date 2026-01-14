@@ -13,14 +13,14 @@ const HowToWatch: React.FC = () => {
     {
       number: "02",
       title: "ACTIVÁ LA CAMPANITA",
-      description: "Hacé clic en la campanita 🔔 para recibir notificaciones de cada nuevo episodio",
+      description: "Hacé clic en la campanita 🔔 para enterarte del vivo y de todo el contenido extra que subimos",
       icon: "fas fa-bell",
       color: "bg-bamba-yellow"
     },
     {
       number: "03",
       title: "MARTES 20:30 HS",
-      description: "Todos los martes a las 20:30 hs (ARG) estrenamos nuevo contenido",
+      description: "Todos los martes a las 20:30 hs (ARG) transmitimos en vivo",
       icon: "fas fa-calendar-alt",
       color: "bg-bamba-blue"
     }
