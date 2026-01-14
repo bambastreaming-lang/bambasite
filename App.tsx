@@ -38,7 +38,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Cómo Ver Bamba - Instructions */}
-        <section id="como-ver" className="py-12 sm:py-20 md:py-32 bg-[#f8f9fa] border-y-2 border-black/10" aria-labelledby="como-ver-heading">
+        <section id="como-ver" className="py-12 sm:py-20 md:py-32 bg-bamba-yellow/10 border-y-2 border-black/10" aria-labelledby="como-ver-heading">
           <HowToWatch />
         </section>
 

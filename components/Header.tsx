@@ -17,7 +17,6 @@ const Header: React.FC = () => {
     { name: 'Impacto', id: 'impacto' },
     { name: 'Equipo', id: 'equipo' },
     { name: 'Tribuna', id: 'tribuna' },
-    { name: 'Contacto', id: 'contacto' },
   ];
 
   const handleScrollTo = (e: React.MouseEvent, id: string) => {
