@@ -76,33 +76,59 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // 📧 FormSubmit - Envía emails automáticamente sin configuración
-      // Solo necesitas el email de destino: bambastreaming@gmail.com
-      const response = await fetch('https://formsubmit.co/ajax/bambastreaming@gmail.com', {
+      // 📧 EmailJS - Configuración rápida (5 minutos):
+      // 1. Ve a https://www.emailjs.com/ y crea cuenta gratuita (200 emails/mes gratis)
+      // 2. Ve a "Email Services" → "Add New Service" → Elige "Gmail"
+      // 3. Conecta tu cuenta de Gmail (bambastreaming@gmail.com)
+      // 4. Ve a "Email Templates" → "Create New Template"
+      // 5. Usa este template:
+      //    Subject: Nuevo contacto desde Bamba Streaming - {{from_name}}
+      //    Body: 
+      //      Nombre: {{from_name}}
+      //      Email: {{from_email}}
+      //      Teléfono: {{phone}}
+      //      Mensaje: {{message}}
+      // 6. Copia el Service ID, Template ID y Public Key
+      // 7. Reemplaza los valores abajo
+      
+      const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // ⬅️ Ejemplo: service_abc123
+      const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // ⬅️ Ejemplo: template_xyz789
+      const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // ⬅️ Ejemplo: abc123xyz789
+      
+      if (EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID') {
+        // Fallback temporal - Muestra instrucciones
+        alert('⚠️ El formulario necesita configuración de EmailJS.\n\nPor favor, configura EmailJS siguiendo las instrucciones en el código o contacta directamente a:\nbambastreaming@gmail.com');
+        const mailtoLink = `mailto:bambastreaming@gmail.com?subject=Contacto desde la web - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
+          `Nombre: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\n\nMensaje:\n${formData.message}`
+        )}`;
+        window.location.href = mailtoLink;
+        setIsSubmitting(false);
+        return;
+      }
+
+      // EmailJS configurado - Envío directo y confiable
+      const response = await fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          _subject: `Nuevo contacto desde Bamba Streaming - ${formData.name}`,
-          _captcha: false, // Desactivar captcha (opcional, puedes activarlo después)
-          _template: 'table' // Formato de tabla para mejor legibilidad
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            to_email: 'bambastreaming@gmail.com'
+          }
         })
       });
 
       if (!response.ok) {
-        throw new Error('Error al enviar el formulario');
-      }
-
-      const result = await response.json();
-      
-      if (!result.success) {
-        throw new Error(result.message || 'Error al enviar el formulario');
+        const errorText = await response.text();
+        throw new Error(`Error al enviar: ${errorText}`);
       }
 
       setSubmitted(true);

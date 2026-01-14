@@ -2,61 +2,68 @@
 import React from 'react';
 
 const Sponsors: React.FC = () => {
-  // Logos reales obtenidos de fuentes web oficiales o representativas de las marcas mencionadas en el PDF (pág 11)
+  // Logos locales - Coloca los logos en public/images/sponsors/
+  // Nombres de archivo sugeridos: kingston-kosher.png, sushi-ko.png, etc.
   const sponsors = [
     { 
       name: "Kingston Kosher", 
-      logo: "https://kingstonkosher.com/wp-content/uploads/2021/09/Logo-Kingston-Kosher-Vaca-Roja.png", 
+      logo: "/images/sponsors/kingston.jpg", 
       placeholder: "fas fa-cow",
       url: "https://kingstonkosher.com.ar/"
     },
     { 
       name: "Sushi KO", 
-      logo: "https://sushiko.com.ar/wp-content/uploads/2020/07/logo-sushiko-black.png", 
-      placeholder: "fas fa-fish" 
+      logo: "/images/sponsors/sushi-ko.png", 
+      placeholder: "fas fa-fish",
+      url: "https://sushiko.com.ar/"
     },
     { 
       name: "Goldstein Propiedades", 
-      logo: "https://www.goldsteinpropiedades.com/images/logo.png", 
+      logo: "/images/sponsors/goldstein.jpg", 
       placeholder: "fas fa-building",
       url: "https://www.goldsteinpropiedades.com/"
     },
     { 
       name: "Kehot Books", 
-      logo: "https://store.kehotonline.com/images/KehotLogo.png", 
-      placeholder: "fas fa-book" 
+      logo: "/images/sponsors/kehot-books.png", 
+      placeholder: "fas fa-book",
+      url: "https://store.kehotonline.com/"
     },
     { 
       name: "ESH Judaica", 
-      logo: "https://esh.com.ar/cdn/shop/files/ESH-LOGO-V2_300x.png?v=1614321633", 
+      logo: "/images/sponsors/esh-judaica.png", 
       placeholder: "fas fa-fire",
       url: "https://www.esh.com.ar/"
     },
     { 
       name: "M Confitería", 
-      logo: "https://mconfiteria.com.ar/wp-content/uploads/2021/04/Logo-M-Confiteria-Catering.png", 
-      placeholder: "fas fa-m" 
+      logo: "/images/sponsors/m-confiteria.png", 
+      placeholder: "fas fa-m",
+      url: "https://mconfiteria.com.ar/"
     },
     { 
       name: "La Estampería", 
-      logo: "https://laestamperia.com.ar/wp-content/uploads/2021/03/Logo-La-Estamperia.png", 
-      placeholder: "fas fa-shirt" 
+      logo: "/images/sponsors/la-estamperia.png", 
+      placeholder: "fas fa-shirt",
+      url: "https://laestamperia.com.ar/"
     },
     { 
       name: "SOMA 3D", 
-      logo: "https://somaimpresiones3d.com.ar/wp-content/uploads/2021/06/Logo-Soma-3D-Impresiones.png", 
-      placeholder: "fas fa-cube" 
+      logo: "/images/sponsors/soma-3d.png", 
+      placeholder: "fas fa-cube",
+      url: "https://somaimpresiones3d.com.ar/"
     },
     { 
       name: "Hasofrim", 
-      logo: "https://hasofrim.com.ar/wp-content/uploads/2020/05/logo-hasofrim-judaica.png", 
+      logo: "/images/sponsors/hasofrim.png", 
       placeholder: "fas fa-pen-nib",
       url: "https://hasofrim.com/"
     },
     { 
       name: "Orlibbi", 
-      logo: "https://orlibbi.com.ar/wp-content/uploads/2021/08/logo-orlibbi-indumentaria.png", 
-      placeholder: "fas fa-star" 
+      logo: "/images/sponsors/orlibbi.png", 
+      placeholder: "fas fa-star",
+      url: "https://orlibbi.com.ar/"
     }
   ];
 
