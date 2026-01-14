@@ -13,6 +13,7 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Sobre Bamba', id: 'sobre-nosotros' },
+    { name: 'Cómo Ver', id: 'como-ver' },
     { name: 'Impacto', id: 'impacto' },
     { name: 'Equipo', id: 'equipo' },
     { name: 'Tribuna', id: 'tribuna' },
