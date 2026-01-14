@@ -13,7 +13,7 @@ const Sponsors: React.FC = () => {
     },
     { 
       name: "Sushi KO", 
-      logo: "/images/sponsors/sushi-ko.png", 
+      logo: "/images/sponsors/sushi.jpg", 
       placeholder: "fas fa-fish",
       url: "https://sushiko.com.ar/"
     },
@@ -25,13 +25,13 @@ const Sponsors: React.FC = () => {
     },
     { 
       name: "Kehot Books", 
-      logo: "/images/sponsors/kehot-books.png", 
+      logo: "/images/sponsors/kehot.jpg", 
       placeholder: "fas fa-book",
       url: "https://store.kehotonline.com/"
     },
     { 
       name: "ESH Judaica", 
-      logo: "/images/sponsors/esh-judaica.png", 
+      logo: "/images/sponsors/esh.jpeg", 
       placeholder: "fas fa-fire",
       url: "https://www.esh.com.ar/"
     },
