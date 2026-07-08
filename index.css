@@ -27,6 +27,14 @@ body {
   font-weight: 900;
 }
 
+.stat-card {
+  container-type: inline-size;
+}
+
+.stat-number {
+  font-size: clamp(2.25rem, 20cqi, 4.5rem);
+}
+
 /* Color Variables */
 :root {
   --bamba-yellow: #E6AC3C;
