@@ -3,7 +3,7 @@ import React from 'react';
 
 const Sponsors: React.FC = () => {
   // Logos locales - Ordenados por importancia (quienes más dinero ponen)
-  // Destacados: Goldstein, Sushi KO, Kingston (tamaño grande)
+  // Destacados: Goldstein, Sushi KO, Kingston, Pura Caña (tamaño grande)
   // Resto: tamaño menor
   const sponsors = [
     { 
@@ -26,6 +26,13 @@ const Sponsors: React.FC = () => {
       placeholder: "fas fa-cow",
       url: "https://kingstonkosher.com.ar/",
       featured: true // Tercero más destacado
+    },
+    { 
+      name: "Pura Caña", 
+      logo: "/images/sponsors/pura-cana.png", 
+      placeholder: "fas fa-wine-glass",
+      url: "https://www.puracania.com/",
+      featured: true
     },
     { 
       name: "Kehot Books", 
